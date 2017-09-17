@@ -1,0 +1,11 @@
+{
+  "name": "rn-mtt-base",
+  "version": "0.0.2",
+  "description": "React, React Native MoonTaeTae Base Module, Utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jm99tt",
+  "license": "MIT"
+}
