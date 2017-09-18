@@ -30,21 +30,22 @@ const NetworkInfo = {
 
 module.exports = { NetworkInfo }
 */
-
-export function experi(arg) {
-  console.log(arg);
-  return `Hello world to arg : ${arg}`;
-}
-
-export function reachToIos(arg) {
-  // -(void)helloToCocoa:(NSString *)param {
-  NaverLogin.helloToCocoa(arg);
-}
+//
+// export function experi(arg) {
+//   console.log(arg);
+//   return `Hello world to arg : ${arg}`;
+// }
+//
+// export function reachToIos(arg) {
+//   // -(void)helloToCocoa:(NSString *)param {
+//   NaverLogin.helloToCocoa(arg);
+// }
 
 const RnNaverAuth = {
   reachToIos(arg) {
-   // -(void)helloToCocoa:(NSString *)param {
-   NaverLogin.helloToCocoa(arg);
+    console.log(' reached To Ios Method .js ');
+    // -(void)helloToCocoa:(NSString *)param {
+    NaverLogin.helloToCocoa(arg);
  }
 }
 
