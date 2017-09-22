@@ -31,18 +31,3 @@ typedef enum {
     NEED_REFRESH_ACCESS_TOKEN,
     OK
 } OAuthLoginState;
-
-//#define kServiceAppUrlScheme    @"thirdparty20samplegame"
-//
-//#define kConsumerKey            @"jyvqXeaVOVmV"
-//#define kConsumerSecret         @"527300A0_COq1_XV33cf"
-//#define kServiceAppName         @"네이버 아이디로 로그인"
-
-
-#define kServiceAppUrlScheme    @"comthemoinremiturlscheme"
-
-#define kConsumerKey            @"SIVlb8pJop7NMpNJcy9c"
-#define kConsumerSecret         @"YV0HTkaPda"
-#define kServiceAppName         @"MOIN"
-
-
