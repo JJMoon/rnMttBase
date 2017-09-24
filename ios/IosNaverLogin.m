@@ -99,7 +99,7 @@ RCT_EXPORT_METHOD(logout) {
 
 
 RCT_EXPORT_METHOD(getProfile:(NSString *)token resp:(RCTResponseSenderBlock)response) {
-  if (NO == [_thirdPartyLoginConn isValidAccessTokenExpireTimeNow]) {
+  if (NO == [naverConn isValidAccessTokenExpireTimeNow]) {
     return;
   }
   
@@ -107,7 +107,7 @@ RCT_EXPORT_METHOD(getProfile:(NSString *)token resp:(RCTResponseSenderBlock)resp
   
   NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
   
-  NSString *authValue = [NSString stringWithFormat:@"Bearer %@", _thirdPartyLoginConn.accessToken];
+  NSString *authValue = [NSString stringWithFormat:@"Bearer %@", naverConn.accessToken];
   
   [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
   
