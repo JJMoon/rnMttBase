@@ -96,4 +96,33 @@ RCT_EXPORT_METHOD(logout) {
   naverTokenSend = nil;
 }
 
+
+
+RCT_EXPORT_METHOD(getProfile:(NSString *)token resp:(RCTResponseSenderBlock)response) {
+  if (NO == [_thirdPartyLoginConn isValidAccessTokenExpireTimeNow]) {
+    return;
+  }
+  
+  NSString *urlString = @"https://openapi.naver.com/v1/nid/getUserProfile.xml";  // 사용자 프로필 호출
+  
+  NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+  
+  NSString *authValue = [NSString stringWithFormat:@"Bearer %@", _thirdPartyLoginConn.accessToken];
+  
+  [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
+  
+  NSHTTPURLResponse *response = nil;
+  NSError *error = nil;
+  NSData *receivedData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
+  NSString *decodingString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+  
+  if (error) {
+    NSLog(@"Error happened - %@", [error description]);
+    
+  } else {
+    NSLog(@"recevied data - %@", decodingString);
+    response(@[[NSNull null], decodingString]);
+  }
+}
+
 @end
